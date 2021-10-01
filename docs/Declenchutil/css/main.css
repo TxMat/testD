@@ -1,15 +1,29 @@
 body {
     background: #2e2e2e;
-    color: #fc5d38;
+    color: #1300fd;
     font-family: "DejaVu Sans", sans-serif;
 }
 
-header {
+header, footer{
   margin: 5px 5px 20px 5px;
   text-align: center;
   background-color: #202225;
   padding: 10px 10px 25px 10px;
   border-radius: 8px;
+}
+
+nav {
+    background-color: #202225;
+    padding: 1px;
+    border-radius: 5px;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: aqua;
 }
 
 h1 {
@@ -35,6 +49,14 @@ article {
   display: flex;
   align-items: center;
 }
+
+nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+
+}
+
 article:hover {
   transform: scale(1.08);
   transition: 0.5s;
