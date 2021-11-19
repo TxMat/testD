@@ -6,6 +6,7 @@ body {
     color: #E8E9EB;
     font-family: "DejaVu Sans", sans-serif;
 
+
 }
 
 body a {
@@ -15,12 +16,18 @@ body a {
   transition: 0s;
 }
 
-body>section, .cours-container {
+body section {
   display: flex;
   width: auto;
-  justify-content: space-between;
-  padding: 1%
+  justify-content: flex-start;
 }
+
+body section>section {
+  width: 100%;
+  height: 30em;
+  max-height: 500px;
+}
+
 /* --------------fin partie body --------------*/
 
 
@@ -28,18 +35,22 @@ body>section, .cours-container {
 /* --------------partie article de cours --------------*/
 
 .cours-container{
-  width: auto;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
 }
 
 .cours {
     background: #2F3E46;
     height:auto;
-    width: 20%;
+    width: 25%;
     display: flex;
     flex-direction: column;
     text-align: center;
     border-radius: 10px;
+    min-width: 150px;
 
+    overflow-y: hidden;
 }
 
 .cours h3{
@@ -59,12 +70,14 @@ body>section, .cours-container {
 
 aside {
   display: flex;
-    flex-direction: column;
-  width: 50%;
+  flex-direction: column;
+  width: 20%;
+  min-width: 200px;
 }
 
 aside div img {
   margin: 10px;
+  margin-top: 0;
   width: 100%;
 }
 
