@@ -1,3 +1,10 @@
+body {
+  margin: 0;
+    background: #E8E9EB;
+    color: #E8E9EB;
+    font-family: "DejaVu Sans", sans-serif;
+
+}
 
 /* --------------partie header --------------*/
 header {
@@ -69,4 +76,3 @@ footer {
 }
 
 /* --------------fin partie footer --------------*/
- 
