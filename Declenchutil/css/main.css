@@ -64,6 +64,17 @@ body section>section {
 .cours p {
   overflow-wrap: break-word;
 }
+.desc-cours{
+  display: flex;  
+}
+.prix{
+  align-self: flex-start;
+  background-color: black;
+  color: red;
+  margin: 0.5em 5.3em; 
+  border-radius: 0.5em; 
+}
+
 /* --------------fin partie article de cours --------------*/
 
 /* --------------partie article photo sur les cotés --------------*/
