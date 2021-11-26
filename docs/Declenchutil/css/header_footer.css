@@ -14,6 +14,9 @@ header a {
   border-radius: 5px;
   margin-left: 7px;
   margin-right: 7px;
+  text-align: center;
+  font-style: normal;
+  text-decoration: none;
 }
 
 
@@ -28,8 +31,6 @@ header a:hover {
   background-color: #FAC05E;
   transition: 0.5s;
 }
-
-
 
 header section{
   margin: 0;
@@ -64,6 +65,8 @@ header img{
 header p {
   margin: 0;
 }
+
+
 /* --------------fin partie header --------------*/
 
 /* --------------partie footer --------------*/
@@ -72,3 +75,9 @@ footer {
 }
 
 /* --------------fin partie footer --------------*/
+
+.disabled {
+      pointer-events: none;
+      cursor: default;
+      color: grey;
+      }
