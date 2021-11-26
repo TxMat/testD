@@ -1,11 +1,11 @@
-div>figure {
+figure {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   width: 100%;
 }
 
-div>figure figcaption {
+figure figcaption {
   background-color: #2F3E46;
   width: 100%;
 }
