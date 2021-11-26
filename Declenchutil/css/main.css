@@ -1,12 +1,12 @@
 /* --------------partie body --------------*/
-
+html, body {
+  height: 100%;
+  margin: 0;
+}
 body {
-    margin: 0;
     background: #E8E9EB;
     color: #E8E9EB;
     font-family: "DejaVu Sans", sans-serif;
-
-
 }
 
 body a {
@@ -17,6 +17,8 @@ body a {
 }
 
 body section {
+  min-height: 100%;
+  margin-bottom: -50px;
   display: flex;
   width: auto;
   justify-content: flex-start;
@@ -38,18 +40,21 @@ body section>section {
   display: flex;
   justify-content: space-around;
   width: 100%;
+  min-height: calc(100vh - 70px);
+  flex-wrap:wrap;
+  justify-content: space-around;
 }
 
 .cours {
     background: #2F3E46;
     height:auto;
-    width: 25%;
+    width: 350px;
     display: flex;
     flex-direction: column;
     text-align: center;
     border-radius: 10px;
     min-width: 150px;
-
+    margin: 2em 0.5em;
     overflow-y: hidden;
 }
 
@@ -64,14 +69,16 @@ body section>section {
 .cours p {
   overflow-wrap: break-word;
 }
-.desc-cours{
+.cours div{
+  margin-top: 0.5em;
   display: flex;  
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
-.prix{
-  align-self: flex-start;
-  background-color: black;
-  color: red;
-  margin: 0.5em 5.3em; 
+.cours div span{
+  color: #2F3E46;
+  background-color: #FAC05E;
+  padding: 0.5em;
   border-radius: 0.5em; 
 }
 
