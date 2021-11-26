@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>inscription amateur</title>
     <link rel="stylesheet" href="../css/header_footer.css">
+    <link rel="stylesheet" href="../css/main.css">
+
   </head>
   <body>
     <header>
@@ -23,14 +25,17 @@
 
     <form class="" action="index.html" method="post">
       <label>Prénom :
-      <input type="text" name="prénom" value="prénom" placeholder="Prénom"></label>
+      <input type="text" name="prénom" value="" placeholder="Prénom"></label>
+
       <label>Nom :
-      <input type="text" name="nom" value="nom" placeholder="Nom"> </label>
+      <input type="text" name="nom" value="" placeholder="Nom"> </label>
 
       <label for="num">Numéro : </label>
       <input type="tel" id="num" name="phone_number" placeholder="0607080910" pattern="[0]{1}[6-8]{1}[0-9]{8}">
+
       <label for="mail">E-mail : </label>
       <input type="email" id="mail" name="user_mail" placeholder="mail@exemple.com">
+
       <input type="submit" id="btn" name="OK" value="Créer mon compte" title="envoyer le formulaire">
     </form>
 

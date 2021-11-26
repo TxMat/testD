@@ -81,6 +81,11 @@ aside div img {
   width: 100%;
 }
 
-
-
 /* --------------partie article photo sur les cotés --------------*/
+
+/* --------------partie labels/formulaire --------------*/
+label {
+  color: black;
+}
+
+/* -------------- fin partie labels/formulaire --------------*/
