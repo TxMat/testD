@@ -2,8 +2,11 @@
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>inscription amateur</title>
+    <title>inscription professionnel</title>
     <link rel="stylesheet" href="../css/header_footer.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/inscription_pro.css">
+
   </head>
   <body>
     <header>
@@ -21,18 +24,33 @@
         </nav>
     </header>
 
-    <form class="" action="index.html" method="post">
-      <label for="test">Prénom : </label>
+    <div class="">
+    <form class="" action="../index.html" method="post">
+    <article class="saisie">
+      <label>Prénom :  </label>
       <input type="text" name="prénom" value="" placeholder="Prénom">
-      <label for="test">Nom : </label>
+      </article>
+
+      <article class="saisie">
+      <label>Nom :  </label>
       <input type="text" name="nom" value="" placeholder="Nom">
-      <label for="num">Numéro : </label>
+      </article>
+
+      <article class="saisie">
+      <label for="num" class="saisie">Numéro :</label>
       <input type="tel" id="num" name="phone_number" placeholder="0607080910" pattern="[0]{1}[6-8]{1}[0-9]{8}">
-      <label for="mail">E-mail : </label>
+      </article>
+
+      <article class="saisie">
+      <label for="mail" class="">E-mail :</label>
       <input type="email" id="mail" name="user_mail" placeholder="mail@exemple.com">
+      </article>
+      <label>qualifications : </label>
+      <textarea name="le-message" rows="6" cols="40" placeholder="Vous pouvez saisir ici vos qualifications"></textarea>
+
       <input type="submit" id="btn" name="OK" value="Créer mon compte" title="envoyer le formulaire">
     </form>
-
+    </div>
 
     <footer>  <h2>Nous contacter</h2> </footer>
   </body>

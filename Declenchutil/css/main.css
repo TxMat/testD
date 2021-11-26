@@ -83,14 +83,17 @@ aside div img {
 
 /* --------------partie article photo sur les cotés --------------*/
 
-.disabled {
-  pointer-events: none;
-  cursor: default; 
-}
+
 
 /* --------------partie labels/formulaire --------------*/
-label {
-  color: black;
+
+.disabled {
+  pointer-events: none;
+  cursor: default;
 }
+
+.saisie input:invalid{
+border:3px solid red;
+	}
 
 /* -------------- fin partie labels/formulaire --------------*/

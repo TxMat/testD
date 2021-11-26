@@ -5,6 +5,7 @@
     <title>inscription amateur</title>
     <link rel="stylesheet" href="../css/header_footer.css">
     <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/inscription_amateur.css">
 
   </head>
   <body>
@@ -23,22 +24,31 @@
         </nav>
     </header>
 
-    <form class="" action="index.html" method="post">
-      <label>Prénom :
-      <input type="text" name="prénom" value="" placeholder="Prénom"></label>
+<div class="">
+    <form class="" action="../index.html" method="post">
+      <article class="saisie">
+      <label>Prénom :  </label>
+      <input type="text" name="prénom" value="" placeholder="Prénom">
+      </article>
 
-      <label>Nom :
-      <input type="text" name="nom" value="" placeholder="Nom"> </label>
+      <article class="saisie">
+      <label>Nom :  </label>
+      <input type="text" name="nom" value="" placeholder="Nom">
+      </article>
 
-      <label for="num">Numéro : </label>
+      <article class="saisie">
+      <label for="num" class="saisie">Numéro :</label>
       <input type="tel" id="num" name="phone_number" placeholder="0607080910" pattern="[0]{1}[6-8]{1}[0-9]{8}">
+      </article>
 
-      <label for="mail">E-mail : </label>
+      <article class="saisie">
+      <label for="mail" class="">E-mail :</label>
       <input type="email" id="mail" name="user_mail" placeholder="mail@exemple.com">
+      </article>
 
       <input type="submit" id="btn" name="OK" value="Créer mon compte" title="envoyer le formulaire">
     </form>
-
+  </div>
 
     <footer>  <h2>Nous contacter</h2> </footer>
   </body>

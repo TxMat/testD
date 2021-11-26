@@ -1,0 +1,25 @@
+form {
+  display: flex;
+  flex-direction: column;
+
+}
+form>input {
+  margin-top: 10px;
+  width: 150px;
+}
+
+form>article {
+  margin: 5px;
+}
+
+form article {
+  display: flex;
+  justify-content: space-between;
+}
+
+div {
+  width: 20%;
+  margin-left: 38%;
+  background-color: #2f3e46;
+  padding: 2%;
+}
