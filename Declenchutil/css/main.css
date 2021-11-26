@@ -83,6 +83,11 @@ aside div img {
 
 /* --------------partie article photo sur les cotés --------------*/
 
+.disabled {
+  pointer-events: none;
+  cursor: default; 
+}
+
 /* --------------partie labels/formulaire --------------*/
 label {
   color: black;
