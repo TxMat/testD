@@ -5,6 +5,7 @@ form {
 }
 form>input {
   margin-top: 10px;
+  margin-bottom: 10px;
   width: 150px;
 }
 
@@ -19,7 +20,16 @@ form article {
 
 div {
   width: 20%;
-  margin-left: 38%;
+  margin: 0 38%;
   background-color: #2f3e46;
   padding: 2%;
+  min-width: 333px;
+}
+
+ div a {
+   padding-top: 5px;
+  color: white;
+}
+ div a:visited {
+  color: white;
 }
