@@ -28,12 +28,17 @@
     <form class="" action="../index.html" method="post">
       <article class="saisie">
       <label>Prénom :  </label>
-      <input type="text" name="prénom" value="" placeholder="Prénom">
+      <input type="text" name="prénom" value="" placeholder="Prénom" required>
       </article>
 
       <article class="saisie">
       <label>Nom :  </label>
-      <input type="text" name="nom" value="" placeholder="Nom">
+      <input type="text" name="nom" value="" placeholder="Nom" required>
+      </article>
+
+      <article class="saisie">
+      <label for="start">date de naissance :  </label>
+      <input type="date" id="start" name="birth" value="" required>
       </article>
 
       <article class="saisie">
@@ -43,7 +48,7 @@
 
       <article class="saisie">
       <label for="mail" class="">E-mail :</label>
-      <input type="email" id="mail" name="user_mail" placeholder="mail@exemple.com">
+      <input type="email" id="mail" name="user_mail" placeholder="mail@exemple.com" required>
       </article>
 
       <input type="submit" id="btn" name="OK" value="Créer mon compte" title="envoyer le formulaire">
