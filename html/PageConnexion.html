@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>inscription amateur</title>
+    <link rel="stylesheet" href="../css/header_footer.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/inscription_amateur.css">
+
+</head>
+<body>
+<header>
+    <section>
+        <p><img src="../img/d.png" alt="LogoDeclenchutil"> </p>
+        <h1>eclenchutil</h1>
+    </section>
+    <nav>
+        <ul>
+            <a href="#" class="disabled "><li>Galerie</li></a>
+            <a href="#" class="disabled "><li>Formation</li></a>
+            <a href="#" class="disabled "><li>Compte</li></a>
+        </ul>
+    </nav>
+</header>
+
+<div class="">
+    <form class="" action="/login" method="post" >
+        <p class = "error_message">{{error_feedback}}</p>
+        <article class="saisie">
+            <label for="username" class="">E-mail :
+                <input type="email" id="mail" name="username" placeholder="mail@exemple.com" required>
+            </label>
+        </article>
+        
+        <article class="saisie">
+            <label for="password" class="">Mot de passe :
+                <input type="password" name="password" required>
+            </label>
+        </article>
+
+
+        <input type="submit" id="btn" value="Connexion" title="envoyer le formulaire">
+    </form>
+    <a href="/">Annuler</a>
+</div>
+
+<footer>  <h2>Nous contacter</h2> </footer>
+</body>
+</html>
