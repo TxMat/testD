@@ -23,7 +23,7 @@ def img(path):
 
 @app.route('/')
 def index():
-    return render_template("PageAcceuil.html")
+    return render_template("PageAccueil.html")
 
 @app.route('/login',methods = ['GET', 'POST'])
 def login():
@@ -43,7 +43,7 @@ def login():
             error_feedback = 'Mot de passe incorrect'
             return render_template('PageConnexion.html', error_feedback=error_feedback)
 
-        return render_template('PageAcceuilLogged.html', user=user)
+        return render_template('PageAccueilLogged.html', user=user)
         
 @app.route('/register', methods = ['GET', 'POST'])
 def register():
@@ -74,4 +74,4 @@ def register():
             print(errors_feedbacks)
             return render_template('PageInscription.html', errors_feedbacks=errors_feedbacks)
         else:
-            return render_template('PageAcceuilLogged.html', user=user)
+            return render_template('PageAccueilLogged.html', user=user)
