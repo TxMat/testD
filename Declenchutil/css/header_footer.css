@@ -1,8 +1,8 @@
 body {
   margin: 0;
-    background: #E8E9EB;
-    color: #E8E9EB;
-    font-family: "DejaVu Sans", sans-serif;
+  background: #E8E9EB;
+  color: #E8E9EB;
+  font-family: "DejaVu Sans", sans-serif;
 
 }
 
@@ -58,7 +58,7 @@ header {
 
 
 header nav>ul {
-  padding: 0px;
+  padding: 0;
   margin: 0;
   display: flex;
   justify-content: space-around;
@@ -82,7 +82,6 @@ footer {
 }
 
 /* --------------fin partie footer --------------*/
-
 .disabled {
       pointer-events: none;
       cursor: default;
