@@ -9,3 +9,7 @@ class UserNotFound(UserException):
 class UserAlreadyExists(UserException):
     def __init__(self, *args, **kwargs):
         self.UserException = UserException(self, *args, **kwargs)
+
+class IncorrectPassword(UserException):
+    def __init__(self, *args, **kwargs):
+        self.UserException = UserException(self, *args, **kwargs)

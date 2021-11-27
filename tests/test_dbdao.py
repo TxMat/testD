@@ -1,18 +1,19 @@
 import os
 from datetime import date
 import unittest
-from src.model.experience import Experience
+
 from src.model.user import User
 from src.model.dbdao import DbDao
 from src.model.user_exception import *
 
 password = "NotSoStrongPWD1234!"
 birthday = date(1998, 4, 10)
+id = 1
 class TestDbDao(unittest.TestCase):
     
     def setUp(self) -> None:
         self.dao = DbDao()
-        self.user_manipulated = User(1, "Roger", "Martin", "roger@gmail.com", password,birthday )
+        self.user_manipulated = User(id, "Roger", "Martin", "roger@gmail.com", password,birthday )
         try:
             os.remove("data/serialized_user.pickle")
         except FileNotFoundError:
@@ -36,6 +37,13 @@ class TestDbDao(unittest.TestCase):
         with self.assertRaises(UserNotFound):
             self.dao.remove_user(self.user_manipulated.id)
     
+    def test_get_user_id(self):
+        try:
+            self.dao.save_user(self.user_manipulated)
+        except UserAlreadyExists:
+            pass
+        self.assertEqual(id+1, self.dao.get_new_user_id())
+            
     
 if __name__ == '__main__':
     unittest.main()

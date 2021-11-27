@@ -1,6 +1,5 @@
 from datetime import date
 import unittest
-from src.model.experience import Experience
 from src.model.user import User
 
 name = "Jhon"
@@ -9,7 +8,7 @@ email = "JohnDoe@example.com"
 password = "NotSoStrongPWD1234!"
 password2 = "Ver235yStro#ngPWD"
 birthday = date(1998, 4, 10)
-id = 0
+id = 1
 class TestUser(unittest.TestCase):
     user = None
     

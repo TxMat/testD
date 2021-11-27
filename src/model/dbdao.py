@@ -5,11 +5,19 @@ from src.model.user_exception import *
 SAVE_PATH = "data/serialized_user.pickle"
 from src.model.user import User 
 
-class DbDao(): 
+class DbDao: 
     def __init__(self): 
         self
     
     def save_user(self, user : User) -> None:
+        """Save the user to the database
+
+        Args:
+            user (User): user instance
+
+        Raises:
+            UserAlreadyExists: user already exists in the database
+        """
         user_list = []
         try:
             self.load_user(user.email)
@@ -29,6 +37,17 @@ class DbDao():
             pickle.dump(user_list, file)
     
     def load_user(self, email : str) -> User:
+        """get user from database filtered by his id
+
+        Args:
+            email (str): email of the user 
+
+        Raises:
+            UserNotFound: the user does not exist in the database
+
+        Returns:
+            User: user with email == email
+        """
         user_list = []
         try:
             with open(SAVE_PATH, "rb") as file:
@@ -48,6 +67,14 @@ class DbDao():
             return user
     
     def remove_user(self, id : int) -> None:
+        """remove user from database
+
+        Args:
+            id (int): id of the user wanted to remove
+
+        Raises:
+            UserNotFound: the user is not in the database
+        """
         user_list = []
         try:
             with open(SAVE_PATH, "rb") as file:
@@ -67,3 +94,22 @@ class DbDao():
             del user_list[i-1]
             with open(SAVE_PATH, "wb") as file:
                 pickle.dump(user_list, file)
+    
+    def get_new_user_id(self) -> int:
+        """Return an id that is free from user
+
+        Returns:
+            int: [description]
+        """
+        user_list = []
+        try:
+            with open(SAVE_PATH, "rb") as file:
+                user_list = pickle.load(file)
+        except FileNotFoundError:
+            return 1
+        
+        max = 1
+        for user in user_list:
+            if user.id > max:
+                max = user.id
+        return max + 1
