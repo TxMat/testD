@@ -5,7 +5,7 @@ from src.model.user_exception import *
 import os
 SAVE_PATH = "data"
 if not os.path.isdir(SAVE_PATH):
-    SAVE_PATH = "Declenchutil"
+    SAVE_PATH = "SAVE_PATH = Declenchutil/data"
 SAVE_PATH += "/serialized_user.pickle"
 from src.model.user import User 
 

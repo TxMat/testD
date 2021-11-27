@@ -8,7 +8,7 @@ from src.model.user_exception import *
 
 SAVE_PATH = "data"
 if not os.path.isdir(SAVE_PATH):
-    SAVE_PATH = "Declenchutil"
+    SAVE_PATH = "Declenchutil/data"
 SAVE_PATH += "/serialized_user.pickle"
 
 password = "NotSoStrongPWD1234!"
