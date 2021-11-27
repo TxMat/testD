@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>inscription professionnel</title>
+    <link rel="stylesheet" href="../css/header_footer.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/inscription_pro.css">
+
+  </head>
+  <body>
+    <header>
+      <section>
+        <p><img src="../img/d.png" alt="LogoDeclenchutil"> </p>
+        <h1>eclenchutil</h1>
+      </section>
+        <nav>
+            <ul>
+                <a href="#"><li>Galerie</li></a>
+                <a href="#"><li>Formation</li></a>
+                <a href="#"><li>Compte</li></a>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="">
+      <form class="" action="pageAcceuil.html" method="post">
+
+        <article class="saisie">
+          <label>Prénom :
+              <input type="text" name="prénom" value="" placeholder="Prénom" required>
+          </label>
+        </article>
+
+        <article class="saisie">
+          <label>Nom :
+            <input type="text" name="nom" value="" placeholder="Nom" required>
+          </label>
+        </article>
+
+        <article class="saisie">
+          <label for="start">date de naissance :
+            <input type="date" id="start" name="birth" value="" required>
+          </label>
+        </article>
+
+        <article class="saisie">
+          <label for="num" class="saisie">Numéro :
+            <input type="tel" id="num" name="phone_number" placeholder="0607080910" pattern="[0]{1}[6-7]{1}[0-9]{8}">
+          </label>
+        </article>
+
+        <article class="saisie">
+          <label for="mail" class="">E-mail :
+            <input type="email" id="mail" name="user_mail" placeholder="mail@exemple.com" required>
+          </label>
+        </article>
+
+        <label>qualifications :
+          <textarea name="le-message" rows="6" cols="40" placeholder="Vous pouvez saisir ici vos qualifications"></textarea>
+        </label>
+
+        <input type="submit" id="btn-creer" name="btn-creer" value="Créer mon compte" title="envoyer le formulaire">
+      </form>
+      <a href="pageAcceuil.html">Annuler</a>
+    </div>
+
+    <footer>  <h2>Nous contacter</h2> </footer>
+  </body>
+</html>
