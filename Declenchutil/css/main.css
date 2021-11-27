@@ -16,7 +16,7 @@ body a {
   transition: 0s;
 }
 
-body section {
+body>section {
   min-height: 100%;
   margin-bottom: -50px;
   display: flex;
