@@ -3,20 +3,25 @@ import unittest
 from src.model.experience import Experience
 from src.model.user import User
 
+name = "Jhon"
+lastname = "Doe"
+email = "JohnDoe@example.com"
+password = "NotSoStrongPWD1234!"
+password2 = "Ver235yStro#ngPWD"
+birthday = date(1998, 4, 10)
+id = 0
 class TestUser(unittest.TestCase):
     user = None
+    
     def setUp(self) -> None:
-        self.user_name = "Jhon"
-        self.user_lastname = "Doe"
-        self.user_email = "JohnDoe@example.com"
-        self.user_password = "NotSoStrongPWD1234!"
-        self.user_birthday = date(1998, 4, 10)
         self.user = User(
-            self.user_name,
-            self.user_lastname, 
-            self.user_email, 
-            self.user_password, 
-            self.user_birthday)
+            id,
+            name,
+            lastname, 
+            email, 
+            password, 
+            birthday)
+        
         print("setup")   
     def test_update_password(self) -> None:
         bad_pwd = [
@@ -30,7 +35,31 @@ class TestUser(unittest.TestCase):
 
         ]
         for pwd in bad_pwd:
-            self.assertRaises(AttributeError, self.user.update_password, pwd)
+            self.assertRaises(ValueError, self.user.update_password, pwd)
+        self.user.update_password(password2)
 
+    def test_password_matching(self) -> None:
+        self.user.update_password(password2)
+        self.assertTrue(self.user.is_password_matching(password2))
+        self.assertTrue(not self.user.is_password_matching(password))
+
+    def test_name_lastname_format(self) -> None:
+        invalid_name = "###''))"
+        with self.assertRaises(ValueError):
+            self.user.lastname = invalid_name
+    
+    def test_address(self) -> None :
+        valid_address = "25 Rue Casimir Brenier Grenoble 38000"
+        invalid_address = "25 Rue Casimir Brenier Paris 45000"
+        self.user.address = valid_address # No exception should be raised
+        with self.assertRaises(ValueError):
+            self.user.address = invalid_address
+"""
+class TestClientUser(unittest.TestCase):
+    user = None
+    def setUp(self) -> None:
+        self.user = ClientUser()
+"""     
+    
 if __name__ == '__main__':
     unittest.main()
