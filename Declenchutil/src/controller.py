@@ -1,7 +1,7 @@
-from flask import Flask, send_from_directory, request, render_template
+from flask import Flask, send_from_directory, request, render_template, Markup
 from src.model.model import Model
 from src.model.user_exception import *
-from datetime import date
+from datetime import date, datetime
 
 model = Model()
 app = Flask(__name__, template_folder='../html')
@@ -32,6 +32,7 @@ def login():
     else:
         username = request.form['username']
         password = request.form['password']
+        user = None
         try:
             user = model.load_user(username, password)
         except UserNotFound:
@@ -41,7 +42,36 @@ def login():
             print("incorrect pass")
             error_feedback = 'Mot de passe incorrect'
             return render_template('PageConnexion.html', error_feedback=error_feedback)
-        
 
-        return render_template('PageAcceuilLogged.html')
+        return render_template('PageAcceuilLogged.html', user=user)
         
+@app.route('/register', methods = ['GET', 'POST'])
+def register():
+    if request.method == 'GET':
+        return render_template('PageInscription.html')
+    else:
+        errors_feedbacks = []
+        user = None
+        try:
+            name = request.form['name']
+            lastname = request.form['lastname']
+            mail = request.form['mail']
+            password = request.form['password']
+            confirm = request.form['confirm']
+            birthday_str = request.form['birthday']
+            birthday = datetime.fromisoformat(birthday_str)
+            
+        except (KeyError, ValueError):
+            errors_feedbacks = "Erreur requête"
+        if errors_feedbacks == []:
+            try:
+                user = model.create_user(name, lastname, mail, password, birthday)
+            except UserCreationException as e:
+                for feedback in e.feedback:
+                   
+                   errors_feedbacks.append(feedback.value.replace("\n", "<br>"))
+        if errors_feedbacks != []:
+            print(errors_feedbacks)
+            return render_template('PageInscription.html', errors_feedbacks=errors_feedbacks)
+        else:
+            return render_template('PageAcceuilLogged.html', user=user)

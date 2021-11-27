@@ -1,6 +1,8 @@
 from datetime import date
 import unittest
 from src.model.user import User
+from src.model.feedback import UserCreationFeedback
+from src.model.user_exception import UserCreationException
 
 name = "Jhon"
 lastname = "Doe"
@@ -72,13 +74,25 @@ class TestUser(unittest.TestCase):
         
         self.assertEqual(user_equal, self.user)
         self.assertNotEqual(user_not_equal, self.user)
-        
-"""
-class TestClientUser(unittest.TestCase):
-    user = None
-    def setUp(self) -> None:
-        self.user = ClientUser()
-"""     
     
+    def test_init_exception(self):
+        try:
+            self.user = User(
+                id,
+                name + "#",
+                lastname + "#", 
+                email + "dghfi", 
+                "", 
+                date(2020, 1, 1))
+        except UserCreationException as e:
+            expected_feedback = [
+                UserCreationFeedback.NAME_ERROR,
+                UserCreationFeedback.LASTNAME_ERROR,
+                UserCreationFeedback.EMAIL_ERROR,
+                UserCreationFeedback.PASSWORD_ERROR,
+                UserCreationFeedback.BIRTHDAY_ERROR
+            ]
+            self.assertEqual(e.feedback, expected_feedback)
+            
 if __name__ == '__main__':
     unittest.main()

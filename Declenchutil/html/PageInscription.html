@@ -24,38 +24,57 @@
 </header>
 
 <div class="">
-    <form class="" action="PageAcceuil.html" method="post">
+    <ul class="error_feedback">
+    {% for e_feedback in errors_feedbacks %}
+    {% autoescape false %}
+    <li><p>{{e_feedback}}</p></li>
+    {% endautoescape %}
+    {% endfor %}
+    </ul>
+    <p class="error_feedback">{{error_feedback}}</p>
+    <form class="" action="register" method="post">
         <article class="saisie">
             <label>Prénom :
-                <input type="text" name="prenom" value="" placeholder="Prénom" required>
+                <input type="text" name="name" value="" placeholder="Prénom" required>
             </label>
         </article>
 
         <article class="saisie">
             <label>Nom :
-                <input type="text" name="nom" value="" placeholder="Nom" required>
+                <input type="text" name="lastname" value="" placeholder="Nom" required>
             </label>
         </article>
 
         <article class="saisie">
             <label for="start">date de naissance :
-                <input type="date" id="start" name="birth" value="" required>
+                <input type="date" id="start" name="birthday" value="" required>
             </label>
         </article>
-
+        <!--
         <article class="saisie">
             <label for="num" class="saisie">Numéro :
                 <input type="tel" id="num" name="phone_number" placeholder="0607080910" pattern="[0]{1}[6-8]{1}[0-9]{8}">
             </label>
-        </article>
+        </article>-->
 
         <article class="saisie">
             <label for="mail" class="">E-mail :
-                <input type="email" id="mail" name="user_mail" placeholder="mail@exemple.com" required>
+                <input type="email" id="mail" name="mail" placeholder="mail@exemple.com" required>
             </label>
         </article>
 
-        <input type="submit" id="btn" name="OK" value="Créer mon compte" title="envoyer le formulaire">
+        <article class="saisie">
+            <label for="password" class="">Mot de passe :
+                <input type="password" name="password" required>
+            </label>
+        </article>
+        <article class="saisie">
+            <label for="confirm" class="">Confirmez le mot de passe :
+                <input type="password" name="confirm" required>
+            </label>
+        </article>
+
+        <input type="submit" id="btn" value="Créer mon compte" title="envoyer le formulaire">
     </form>
     <a href="PageAcceuil.html">Annuler</a>
 </div>

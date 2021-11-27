@@ -3,6 +3,9 @@ from dateutil.relativedelta import relativedelta
 import hashlib
 from email_validator import validate_email, EmailNotValidError
 from geopy.geocoders import Nominatim
+from src.model.feedback import UserCreationFeedback
+from src.model.user_exception import UserCreationException
+
 
 def get_hash(input_str : str) -> str:
     return hashlib.sha256(input_str.encode()).hexdigest()
@@ -25,7 +28,7 @@ def format_naming_input(input_str : str) -> str:
     return input_str.replace(" ", "")
 
 class User:
-    
+
     def __init__(self, id : int, name : str, lastname : str, email : str, password : str, birthday : date ):
         """Create a standard user object
 
@@ -36,21 +39,35 @@ class User:
             email (str): [description]
             password (str): [description]
             birthday (date): [description]
+        raise UserCreationException if inputs is incorrect
         """
+        feedback = []
         self._id = id
-        self.name = name
-        self.lastname = lastname
-        self.email = email
-        self.update_password(password)
+        try:
+            self.name = name
+        except ValueError:
+            feedback.append(UserCreationFeedback.NAME_ERROR)
+        try:
+            self.lastname = lastname
+        except ValueError:
+            feedback.append(UserCreationFeedback.LASTNAME_ERROR)
+        try:
+            self.email = email
+        except ValueError:
+            feedback.append(UserCreationFeedback.EMAIL_ERROR)
+        try:
+            self.update_password(password)
+        except ValueError:
+            feedback.append(UserCreationFeedback.PASSWORD_ERROR)
         self.__location = None
         age = relativedelta(date.today(), birthday).years
         if age < 15:
-            raise ValueError("l'age requis n'est pas atteint ({} < 15)".format(age))
+            feedback.append(UserCreationFeedback.BIRTHDAY_ERROR)
         else :
             self.__birthday = birthday
+        if len(feedback) != 0:
+            raise UserCreationException(feedback=feedback)
         
-    
-    
     def update_password(self, password : str) -> None:
         """Update the user password hash 
         raise ValueError if password to weak
@@ -185,7 +202,7 @@ class User:
             self.__location = location
     
     
-    def __eq__(self, other):
+    def __eq__(self, other : 'User') -> bool:
         if not isinstance(other, User):
             return NotImplemented
         else:

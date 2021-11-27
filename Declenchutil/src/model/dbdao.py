@@ -1,6 +1,5 @@
 import sqlite3
-import pickle
-#Temporary for testing purposes
+import pickle #Temporary for testing purposes
 from src.model.user_exception import * 
 import os
 from src.model.user import User 
