@@ -1,5 +1,5 @@
-.pickle
-.pyc
+*.pickle
+*.pyc
 env/
 # Created by https://www.toptal.com/developers/gitignore/api/netbeans,pycharm+all,xcode,jetbrains+all,kdevelop4,phpstorm+all,vim,emacs,eclipse,intellij+all,windows,linux,macos
 # Edit at https://www.toptal.com/developers/gitignore?templates=netbeans,pycharm+all,xcode,jetbrains+all,kdevelop4,phpstorm+all,vim,emacs,eclipse,intellij+all,windows,linux,macos
@@ -511,3 +511,4 @@ DerivedData/
 **/xcshareddata/WorkspaceSettings.xcsettings
 
 # End of https://www.toptal.com/developers/gitignore/api/netbeans,pycharm+all,xcode,jetbrains+all,kdevelop4,phpstorm+all,vim,emacs,eclipse,intellij+all,windows,linux,macos
+data/serialized_user.pickle
