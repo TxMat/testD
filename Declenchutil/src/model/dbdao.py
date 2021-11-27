@@ -2,7 +2,11 @@ import sqlite3
 import pickle
 #Temporary for testing purposes
 from src.model.user_exception import * 
-SAVE_PATH = "data/serialized_user.pickle"
+import os
+SAVE_PATH = "data"
+if not os.path.isdir(SAVE_PATH):
+    SAVE_PATH = "Declenchutil"
+SAVE_PATH += "/serialized_user.pickle"
 from src.model.user import User 
 
 class DbDao: 

@@ -20,8 +20,7 @@ class TestUser(unittest.TestCase):
             email, 
             password, 
             birthday)
-        
-        print("setup")   
+         
     def test_update_password(self) -> None:
         bad_pwd = [
             "aA123!",               # password to short

@@ -6,6 +6,11 @@ from src.model.user import User
 from src.model.dbdao import DbDao
 from src.model.user_exception import *
 
+SAVE_PATH = "data"
+if not os.path.isdir(SAVE_PATH):
+    SAVE_PATH = "Declenchutil"
+SAVE_PATH += "/serialized_user.pickle"
+
 password = "NotSoStrongPWD1234!"
 birthday = date(1998, 4, 10)
 id = 1
@@ -15,7 +20,7 @@ class TestDbDao(unittest.TestCase):
         self.dao = DbDao()
         self.user_manipulated = User(id, "Roger", "Martin", "roger@gmail.com", password,birthday )
         try:
-            os.remove("data/serialized_user.pickle")
+            os.remove(SAVE_PATH)
         except FileNotFoundError:
             pass
     def test_save_load_user(self):

@@ -5,6 +5,11 @@ from src.model.user import User
 from src.model.model import Model
 from src.model.user_exception import IncorrectPassword, UserAlreadyExists
 
+SAVE_PATH = "data"
+if not os.path.isdir(SAVE_PATH):
+    SAVE_PATH = "Declenchutil"
+SAVE_PATH += "/serialized_user.pickle"
+
 name = "Jhon"
 lastname = "Doe"
 email = "JohnDoe@example.com"
@@ -12,6 +17,7 @@ password = "NotSoStrongPWD1234!"
 password2 = "Ver235yStro#ngPWD"
 birthday = date(1998, 4, 10)
 id = 1
+
 class TestModel(unittest.TestCase):
     user = None
     
@@ -26,9 +32,10 @@ class TestModel(unittest.TestCase):
             password, 
             birthday)
         try:
-            os.remove("data/serialized_user.pickle")
+            os.remove(SAVE_PATH)
         except FileNotFoundError:
             pass
+            
     
     def test_create_user(self):
         #Should not throw an exception

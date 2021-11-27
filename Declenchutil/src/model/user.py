@@ -1,6 +1,5 @@
 from datetime import date
 from dateutil.relativedelta import relativedelta
-
 import hashlib
 from email_validator import validate_email, EmailNotValidError
 from geopy.geocoders import Nominatim
