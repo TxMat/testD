@@ -7,7 +7,7 @@
 
 }
 .bgimg1 {
-    background-image: url("https://images.unsplash.com/photo-1637055159652-2b8837731f00?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
+    background-image: url("https://images.unsplash.com/photo-1516724562728-afc824a36e84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80");
     min-height: 100%;
 }
 
@@ -39,12 +39,34 @@
     padding:50px 80px;
 }
 
-header{
+.fixed_login{
     position: fixed;
     z-index: 10;
-    left: 0;
+    right: 0;
     top: 0;
-    width: 100%;
+    width: 20%;
     text-align: center;
+    margin-right: 10px;
+    margin-top: 10px;
     color: #000;
+    max-width: 170px;
+    min-width: 100px;
+}
+
+.login_btn{
+    color: #E8E9EB;
+    border-radius: 10px;
+    border:thin solid #333;
+}
+
+.login_btn:hover{
+    color: #333;
+    border-radius: 10px;
+    background-color: #E8E9EB;
+    transition: 0.5s;
+}
+
+.fixed_login p{
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
