@@ -117,8 +117,8 @@ body a {
     -webkit-transform: rotate(45deg);
     border-left: none;
     border-top: none;
-    border-right: 2px #fff solid;
-    border-bottom: 2px #fff solid;
+    border-right: 2px #E8E9EB solid;
+    border-bottom: 2px #E8E9EB solid;
     transition: 0.3s;
 }
 
@@ -135,8 +135,8 @@ body a {
     margin: -10px 0 0 -10px;
     border-left: none;
     border-top: none;
-    border-right: 1px #fff solid;
-    border-bottom: 1px #fff solid;
+    border-right: 1px #E8E9EB solid;
+    border-bottom: 1px #E8E9EB solid;
     animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-name: arrow;
