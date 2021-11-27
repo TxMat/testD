@@ -1,3 +1,7 @@
+html{
+    scroll-behavior: smooth;
+}
+
 .bgimg1, .bgimg2{
     position: relative;
     background-attachment: fixed;
@@ -86,15 +90,14 @@
     border-top: none;
     border-right: 2px #fff solid;
     border-bottom: 2px #fff solid;
+    transition: 0.3s;
 }
 
 .arrow:hover{
     -webkit-transform: scale(1.2) rotate(45deg);
     transition: 0.3s;
 }
-.arrow:after{
 
-}
 .arrow:before {
     content: "";
     width: 20px;
