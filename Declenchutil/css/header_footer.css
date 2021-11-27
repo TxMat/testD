@@ -15,7 +15,27 @@ header {
 
 }
 
-header a {
+header>div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.login_btn{
+    padding: 10px;
+    background-color: #E8E9EB;
+    color: #2f3e46;
+    border-radius: 10px;
+    border:thin solid #E8E9EB;
+}
+
+.login_btn:hover{
+    color: #E8E9EB;
+    border-radius: 10px;
+    background-color: #2f3e46;
+    transition: 0.5s;
+}
+
+header nav a {
     color: inherit;
     width: 25%;
     border-radius: 5px;
@@ -32,7 +52,7 @@ header h1 {
     margin: 0;
 }
 
-header a:hover {
+header nav a:hover {
     color: #2F3E46;
     border-radius: 10px;
     background-color: #FAC05E;
