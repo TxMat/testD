@@ -54,6 +54,27 @@ class TestUser(unittest.TestCase):
         self.user.address = valid_address # No exception should be raised
         with self.assertRaises(ValueError):
             self.user.address = invalid_address
+    
+    def test_equality(self) -> None:
+        user_equal = User(
+            id,
+            name,
+            lastname, 
+            email, 
+            password, 
+            birthday)
+        
+        user_not_equal = User(
+            id + 3,
+            name + "New",
+            lastname, 
+            email, 
+            password, 
+            birthday)
+        
+        self.assertEqual(user_equal, self.user)
+        self.assertNotEqual(user_not_equal, self.user)
+        
 """
 class TestClientUser(unittest.TestCase):
     user = None

@@ -38,7 +38,6 @@ class User:
             password (str): [description]
             birthday (date): [description]
         """
-        print("AAAAA" + password)
         self._id = id
         self.name = name
         self.lastname = lastname
@@ -63,7 +62,7 @@ class User:
         Args:
             password (str): Password string
         """
-        print( password)
+        
         special = "?.;:!@#$^\{\}\\/<>+-=&~'()[]-|`_@€µ%"
         if (
             len(password) < 8 or len(password) > 36 or 
@@ -71,13 +70,17 @@ class User:
             not any(char in special for char in password) or
             password.upper() == password or
             password.lower() == password):
-            print("Check")
+            
            
             raise ValueError
         self.__password_hash = get_hash(password)
 
     def is_password_matching(self, password : str) -> bool:
-        return get_hash(password) == self.__password_hash
+        return get_hash(password) == self.password_hash
+    
+    @property
+    def password_hash(self)-> str:
+        return self.__password_hash
     
     @property
     def id(self) -> int:
@@ -183,3 +186,15 @@ class User:
             self.__location = location
     
     
+    def __eq__(self, other):
+        if not isinstance(other, User):
+            return NotImplemented
+        else:
+            return (self.id == other.id and
+                   self.name == other.name and
+                   self.lastname == other.lastname and
+                   self.birthday == other.birthday and
+                   self.email == other.email and
+                   self.password_hash == other.password_hash and
+                   self.address == other.address)
+        
